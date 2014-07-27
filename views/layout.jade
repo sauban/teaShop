@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel="shortcut icon" href="/images/tea1.png")
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(type='text/javascript', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAzAjLkHTyXN9RPcvD7hsSIRMpQXqFkJDE&sensor=false')
+    script(src='/javascripts/bootstrap.min.js')
+  body.container-fluid
+    nav.navbar.navbar-default.navbar-static-top(role='navigation')
+     .container-fluid
+      ul.nav.navbar-nav
+        li.navbar-brand #{title}
+      ul.nav.navbar-nav.navbar-right
+        li
+          a(href='/') Home
+        li
+          a(href='/create') Add
+    block content

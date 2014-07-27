@@ -1,0 +1,27 @@
+extend layout
+block content
+  center
+      form.form-horizontal.fromy(name="createShop",method="post",action="/update")
+          div.form-group
+            label.control-label.col-xs-2 Name:
+            div.col-xs-10
+              input.form-control(type="text", placeholder="Tea shop Name", name="name", value="#{data.name}" required)
+          div.form-group
+            label.control-label.col-xs-2 Description:
+            div.col-xs-10
+              input.form-control(type="text", placeholder="Description", name="Locdetails", value="#{data.Description}")
+          div.form-group
+            label.control-label.col-xs-2 Latitude:
+            div.col-xs-10
+              input.form-control(type="number", step="any", placeholder="latitude", name="Lat",value="#{data.location.lat}" required)
+          div.form-group
+            label.control-label.col-xs-2 Longitude:
+            div.col-xs-10
+              input.form-control(type="number", step="any", placeholder="longitude", name="Long", value="#{data.location.long}" required)
+          input(type="text", name="id", value="#{data._id}", readonly, style = "display:none")
+          button.btn.btn-sm.btn-success(type="submit") submit
+      hr    
+      div(id="vas", data-locations=locals.data)
+      script(src = "/javascripts/specify.js")
+      center
+        div(id="map")

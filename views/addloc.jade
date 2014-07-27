@@ -1,0 +1,23 @@
+extends layout
+
+block content
+    h1= title
+    center
+      form.form-horizontal.fromy(name="createShop",method="post",action="/create")
+          div.form-group
+            label.control-label.col-xs-2 Name:
+            div.col-xs-10
+              input.form-control(type="text", placeholder="Tea shop Name", name="name", required)
+          div.form-group
+            label.control-label.col-xs-2 Description:
+            div.col-xs-10
+              input.form-control(type="text", placeholder="Description", name="Locdetails")
+          div.form-group
+            label.control-label.col-xs-2 Latitude:
+            div.col-xs-10
+              input.form-control(type="number", step="any" placeholder="latitude", name="Lat", required)
+          div.form-group
+            label.control-label.col-xs-2 Longitude:
+            div.col-xs-10
+              input.form-control(type="number", step="any", placeholder="longitude", name="Long", required)
+          button.btn.btn-sm.btn-success(type="submit") submit

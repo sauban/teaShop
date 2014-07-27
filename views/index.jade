@@ -1,0 +1,23 @@
+extends layout
+block content
+    center
+      h1 Teashops
+    div(id="list-teaShops")
+        table.table.table-hover.table-condensed
+          each shop, i in data
+            tr
+              td
+                 strong= shop.name
+              td
+                a(href="/view/#{shop._id}")
+                  button.btn.btn-success View
+              td
+                a(href="/edit/#{shop._id}")
+                  button.btn.btn-info Edit
+              td
+                a(href="/del/#{shop._id}")
+                  button.btn.btn-danger delete
+        hr
+        div(id="map-canvas")
+    script(type='text/javascript' src='/javascripts/initGooglemaps.js')
+    
